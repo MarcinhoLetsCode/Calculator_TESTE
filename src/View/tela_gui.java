@@ -652,11 +652,33 @@ public class tela_gui extends javax.swing.JFrame {
         Double peso = Double.parseDouble(pesoText.getText());
         //IMC = Peso ÷ (Altura × Altura)
         resultadoImc.setVisible(true);
-        if ((peso /(altura * altura)) > 25 && (peso /(altura * altura)) < 29.6) {
+        if ((peso /(altura * altura)) < 18.6) {
+            resultadoImc.setText("IMC: \n" + 
+                    String.valueOf(peso /(altura * altura)) + 
+                    "\nAbaixo do Peso");
+        } else if ((peso /(altura * altura)) > 18.6 && (peso /(altura * altura)) < 24.9) {
+            resultadoImc.setText("IMC: \n" + 
+                    String.valueOf(peso /(altura * altura)) + 
+                    "\nPeso Ideal");
+        } else if ((peso /(altura * altura)) > 25 && (peso /(altura * altura)) < 29.9) {
             resultadoImc.setText("IMC: \n" + 
                     String.valueOf(peso /(altura * altura)) + 
                     "\nLevemente Acima do Peso");
-        }
+        } else if ((peso /(altura * altura)) > 30 && (peso /(altura * altura)) < 34.9) {
+            resultadoImc.setText("IMC: \n" + 
+                    String.valueOf(peso /(altura * altura)) + 
+                    "\nObesidade Grau 1");
+        } else if ((peso /(altura * altura)) > 35 && (peso /(altura * altura)) < 39.9) {
+            resultadoImc.setText("IMC: \n" + 
+                    String.valueOf(peso /(altura * altura)) + 
+                    "\nObesidade Grau 2");
+        } else if ((peso /(altura * altura)) > 40) {
+            resultadoImc.setText("IMC: \n" + 
+                    String.valueOf(peso /(altura * altura)) + 
+                    "\nObesidade Grau 3");
+        } else {
+            resultadoImc.setText("Algo Saiu Errado");
+        } 
         
         
     }//GEN-LAST:event_calcularImcActionPerformed
