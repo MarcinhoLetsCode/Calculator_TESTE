@@ -32,8 +32,16 @@ public class tela_gui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        painelHome = new javax.swing.JPanel();
+        labelCustom1 = new org.edisoncor.gui.label.LabelCustom();
         panelImc = new javax.swing.JPanel();
         labelRect1 = new org.edisoncor.gui.label.LabelRect();
+        altura = new org.edisoncor.gui.label.LabelRect();
+        peso = new org.edisoncor.gui.label.LabelRect();
+        alturaText = new org.edisoncor.gui.textField.TextFieldRectIcon();
+        pesoText = new org.edisoncor.gui.textField.TextFieldRectIcon();
+        calcularImc = new org.edisoncor.gui.button.ButtonAction();
+        resultadoImc = new javax.swing.JTextArea();
         panelPadrao = new javax.swing.JPanel();
         buttonRound1 = new org.edisoncor.gui.button.ButtonRound();
         resultado1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
@@ -67,6 +75,30 @@ public class tela_gui extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(340, 400));
 
+        painelHome.setBackground(new java.awt.Color(255, 255, 255));
+
+        labelCustom1.setBackground(new java.awt.Color(255, 255, 255));
+        labelCustom1.setForeground(new java.awt.Color(0, 0, 0));
+        labelCustom1.setText("CALCULADORA");
+        labelCustom1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout painelHomeLayout = new javax.swing.GroupLayout(painelHome);
+        painelHome.setLayout(painelHomeLayout);
+        painelHomeLayout.setHorizontalGroup(
+            painelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelHomeLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(labelCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        painelHomeLayout.setVerticalGroup(
+            painelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelHomeLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(labelCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(241, Short.MAX_VALUE))
+        );
+
         panelImc.setVisible(false);
         panelImc.setBackground(new java.awt.Color(0, 0, 0));
         panelImc.setForeground(new java.awt.Color(255, 255, 255));
@@ -76,21 +108,77 @@ public class tela_gui extends javax.swing.JFrame {
         labelRect1.setText("IMC");
         labelRect1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
+        altura.setBackground(new java.awt.Color(0, 0, 0));
+        altura.setText("Altura");
+        altura.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
+        peso.setBackground(new java.awt.Color(0, 0, 0));
+        peso.setText("Peso");
+        peso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
+        pesoText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesoTextActionPerformed(evt);
+            }
+        });
+
+        calcularImc.setText("Calcular");
+        calcularImc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcularImcActionPerformed(evt);
+            }
+        });
+
+        resultadoImc.setVisible(false);
+        resultadoImc.setEditable(false);
+        resultadoImc.setColumns(20);
+        resultadoImc.setRows(5);
+        resultadoImc.setAutoscrolls(false);
+        resultadoImc.setFocusable(false);
+        resultadoImc.setMargin(new java.awt.Insets(20, 20, 0, 0));
+
         javax.swing.GroupLayout panelImcLayout = new javax.swing.GroupLayout(panelImc);
         panelImc.setLayout(panelImcLayout);
         panelImcLayout.setHorizontalGroup(
             panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImcLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelImcLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelImcLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(resultadoImc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelImcLayout.createSequentialGroup()
+                                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pesoText, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(alturaText, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         panelImcLayout.setVerticalGroup(
             panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImcLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addContainerGap()
                 .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alturaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pesoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(resultadoImc, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         panelPadrao.setVisible(false);
@@ -386,12 +474,16 @@ public class tela_gui extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelImc, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(painelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelPadrao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelImc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(painelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -419,7 +511,7 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonTextDown5ActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_closeActionPerformed
 
     private void padraoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_padraoActionPerformed
@@ -551,6 +643,24 @@ public class tela_gui extends javax.swing.JFrame {
         resultado1.requestFocus();
     }//GEN-LAST:event_num3ActionPerformed
 
+    private void pesoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesoTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pesoTextActionPerformed
+
+    private void calcularImcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularImcActionPerformed
+        Double altura = Double.parseDouble(alturaText.getText());
+        Double peso = Double.parseDouble(pesoText.getText());
+        //IMC = Peso ÷ (Altura × Altura)
+        resultadoImc.setVisible(true);
+        if ((peso /(altura * altura)) > 25 && (peso /(altura * altura)) < 29.6) {
+            resultadoImc.setText("IMC: \n" + 
+                    String.valueOf(peso /(altura * altura)) + 
+                    "\nLevemente Acima do Peso");
+        }
+        
+        
+    }//GEN-LAST:event_calcularImcActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -588,8 +698,11 @@ public class tela_gui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.edisoncor.gui.label.LabelRect altura;
+    private org.edisoncor.gui.textField.TextFieldRectIcon alturaText;
     private org.edisoncor.gui.button.ButtonRound buttonRound1;
     private org.edisoncor.gui.button.ButtonRound buttonRound3;
+    private org.edisoncor.gui.button.ButtonAction calcularImc;
     private org.edisoncor.gui.button.ButtonRound clear;
     private javax.swing.JMenuItem close;
     private org.edisoncor.gui.button.ButtonRound comma;
@@ -597,6 +710,7 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonRound dot;
     private org.edisoncor.gui.button.ButtonRound equal;
     private javax.swing.JMenu jMenu1;
+    private org.edisoncor.gui.label.LabelCustom labelCustom1;
     private org.edisoncor.gui.label.LabelRect labelRect1;
     private org.edisoncor.gui.button.ButtonRound less;
     private javax.swing.JMenuBar menuBar;
@@ -612,9 +726,13 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonRound num8;
     private org.edisoncor.gui.button.ButtonRound num9;
     private javax.swing.JMenuItem padrao;
+    private javax.swing.JPanel painelHome;
     private javax.swing.JPanel panelImc;
     private javax.swing.JPanel panelPadrao;
+    private org.edisoncor.gui.label.LabelRect peso;
+    private org.edisoncor.gui.textField.TextFieldRectIcon pesoText;
     private org.edisoncor.gui.button.ButtonRound plus;
     private org.edisoncor.gui.textField.TextFieldRectBackground resultado1;
+    private javax.swing.JTextArea resultadoImc;
     // End of variables declaration//GEN-END:variables
 }
