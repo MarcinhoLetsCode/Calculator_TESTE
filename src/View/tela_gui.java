@@ -5,11 +5,16 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marcio Darlan
  */
 public class tela_gui extends javax.swing.JFrame {
+
+    private int funcao = 1;
+    private double tempNumSoma = 0;
 
     /**
      * Creates new form tela_gui2
@@ -29,11 +34,11 @@ public class tela_gui extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         buttonRound1 = new org.edisoncor.gui.button.ButtonRound();
-        textFieldRectBackground4 = new org.edisoncor.gui.textField.TextFieldRectBackground();
-        buttonRound2 = new org.edisoncor.gui.button.ButtonRound();
+        resultado1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
+        plus = new org.edisoncor.gui.button.ButtonRound();
         buttonRound3 = new org.edisoncor.gui.button.ButtonRound();
         buttonRound4 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound5 = new org.edisoncor.gui.button.ButtonRound();
+        equal = new org.edisoncor.gui.button.ButtonRound();
         buttonRound10 = new org.edisoncor.gui.button.ButtonRound();
         buttonRound11 = new org.edisoncor.gui.button.ButtonRound();
         buttonRound15 = new org.edisoncor.gui.button.ButtonRound();
@@ -44,6 +49,7 @@ public class tela_gui extends javax.swing.JFrame {
         buttonRound20 = new org.edisoncor.gui.button.ButtonRound();
         buttonRound21 = new org.edisoncor.gui.button.ButtonRound();
         buttonRound22 = new org.edisoncor.gui.button.ButtonRound();
+        del = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -55,12 +61,24 @@ public class tela_gui extends javax.swing.JFrame {
         buttonRound1.setBackground(new java.awt.Color(0, 0, 0));
         buttonRound1.setText("X");
 
-        textFieldRectBackground4.setBackground(new java.awt.Color(0, 0, 0));
-        textFieldRectBackground4.setForeground(new java.awt.Color(255, 255, 255));
-        textFieldRectBackground4.setDescripcion("");
+        resultado1.setBackground(new java.awt.Color(0, 0, 0));
+        resultado1.setForeground(new java.awt.Color(255, 255, 255));
+        resultado1.setDescripcion("");
+        resultado1.setLeft(java.lang.Boolean.FALSE);
+        resultado1.setName("Resultado"); // NOI18N
+        resultado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultado1ActionPerformed(evt);
+            }
+        });
 
-        buttonRound2.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound2.setText("+");
+        plus.setBackground(new java.awt.Color(0, 0, 0));
+        plus.setText("+");
+        plus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plusActionPerformed(evt);
+            }
+        });
 
         buttonRound3.setBackground(new java.awt.Color(0, 0, 0));
         buttonRound3.setText("/");
@@ -68,8 +86,13 @@ public class tela_gui extends javax.swing.JFrame {
         buttonRound4.setBackground(new java.awt.Color(0, 0, 0));
         buttonRound4.setText("-");
 
-        buttonRound5.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound5.setText("=");
+        equal.setBackground(new java.awt.Color(0, 0, 0));
+        equal.setText("=");
+        equal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equalActionPerformed(evt);
+            }
+        });
 
         buttonRound10.setBackground(new java.awt.Color(0, 0, 0));
         buttonRound10.setText("1");
@@ -101,13 +124,21 @@ public class tela_gui extends javax.swing.JFrame {
         buttonRound22.setBackground(new java.awt.Color(0, 0, 0));
         buttonRound22.setText("0");
 
+        del.setBackground(new java.awt.Color(0, 0, 0));
+        del.setText("DEL");
+        del.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textFieldRectBackground4, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(resultado1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
@@ -128,14 +159,14 @@ public class tela_gui extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(buttonRound19, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buttonRound5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                             .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonRound22, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(plus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonRound20, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -143,14 +174,15 @@ public class tela_gui extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonRound4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(buttonRound4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textFieldRectBackground4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(resultado1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonRound10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,7 +200,7 @@ public class tela_gui extends javax.swing.JFrame {
                     .addComponent(buttonRound21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(plus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonRound22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
@@ -176,8 +208,9 @@ public class tela_gui extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buttonRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(buttonRound5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,6 +247,36 @@ public class tela_gui extends javax.swing.JFrame {
     private void buttonTextDown5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTextDown5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonTextDown5ActionPerformed
+
+    private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
+        double tempNum = 0;
+        if (funcao == 1){
+           tempNum = Double.parseDouble(resultado1.getText());
+           resultado1.setText(String.valueOf(tempNumSoma + tempNum)); 
+           JOptionPane.showMessageDialog(null, tempNumSoma);
+           funcao = 0;
+        } else if (funcao == 2){
+
+        }
+        
+    }//GEN-LAST:event_equalActionPerformed
+
+    private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
+        funcao = 1;
+        tempNumSoma = Double.parseDouble(resultado1.getText());
+        resultado1.setText("");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_plusActionPerformed
+
+    private void delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delActionPerformed
+        resultado1.setText("");
+        funcao = 0;
+        tempNumSoma = 0;
+    }//GEN-LAST:event_delActionPerformed
+
+    private void resultado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultado1ActionPerformed
+        
+    }//GEN-LAST:event_resultado1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,14 +323,15 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonRound buttonRound17;
     private org.edisoncor.gui.button.ButtonRound buttonRound18;
     private org.edisoncor.gui.button.ButtonRound buttonRound19;
-    private org.edisoncor.gui.button.ButtonRound buttonRound2;
     private org.edisoncor.gui.button.ButtonRound buttonRound20;
     private org.edisoncor.gui.button.ButtonRound buttonRound21;
     private org.edisoncor.gui.button.ButtonRound buttonRound22;
     private org.edisoncor.gui.button.ButtonRound buttonRound3;
     private org.edisoncor.gui.button.ButtonRound buttonRound4;
-    private org.edisoncor.gui.button.ButtonRound buttonRound5;
+    private org.edisoncor.gui.button.ButtonRound del;
+    private org.edisoncor.gui.button.ButtonRound equal;
     private javax.swing.JPanel jPanel1;
-    private org.edisoncor.gui.textField.TextFieldRectBackground textFieldRectBackground4;
+    private org.edisoncor.gui.button.ButtonRound plus;
+    private org.edisoncor.gui.textField.TextFieldRectBackground resultado1;
     // End of variables declaration//GEN-END:variables
 }
