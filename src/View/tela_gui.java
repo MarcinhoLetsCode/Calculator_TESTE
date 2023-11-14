@@ -37,18 +37,19 @@ public class tela_gui extends javax.swing.JFrame {
         resultado1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
         plus = new org.edisoncor.gui.button.ButtonRound();
         buttonRound3 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound4 = new org.edisoncor.gui.button.ButtonRound();
+        less = new org.edisoncor.gui.button.ButtonRound();
         equal = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound10 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound11 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound15 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound16 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound17 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound18 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound19 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound20 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound21 = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound22 = new org.edisoncor.gui.button.ButtonRound();
+        num1 = new org.edisoncor.gui.button.ButtonRound();
+        num2 = new org.edisoncor.gui.button.ButtonRound();
+        num3 = new org.edisoncor.gui.button.ButtonRound();
+        num4 = new org.edisoncor.gui.button.ButtonRound();
+        num5 = new org.edisoncor.gui.button.ButtonRound();
+        num6 = new org.edisoncor.gui.button.ButtonRound();
+        num7 = new org.edisoncor.gui.button.ButtonRound();
+        num8 = new org.edisoncor.gui.button.ButtonRound();
+        num9 = new org.edisoncor.gui.button.ButtonRound();
+        num0 = new org.edisoncor.gui.button.ButtonRound();
+        clear = new org.edisoncor.gui.button.ButtonRound();
         del = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,8 +84,13 @@ public class tela_gui extends javax.swing.JFrame {
         buttonRound3.setBackground(new java.awt.Color(0, 0, 0));
         buttonRound3.setText("/");
 
-        buttonRound4.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound4.setText("-");
+        less.setBackground(new java.awt.Color(0, 0, 0));
+        less.setText("-");
+        less.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessActionPerformed(evt);
+            }
+        });
 
         equal.setBackground(new java.awt.Color(0, 0, 0));
         equal.setText("=");
@@ -94,38 +100,96 @@ public class tela_gui extends javax.swing.JFrame {
             }
         });
 
-        buttonRound10.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound10.setText("1");
+        num1.setBackground(new java.awt.Color(0, 0, 0));
+        num1.setText("1");
+        num1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num1ActionPerformed(evt);
+            }
+        });
 
-        buttonRound11.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound11.setText("2");
+        num2.setBackground(new java.awt.Color(0, 0, 0));
+        num2.setText("2");
+        num2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num2ActionPerformed(evt);
+            }
+        });
 
-        buttonRound15.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound15.setText("3");
+        num3.setBackground(new java.awt.Color(0, 0, 0));
+        num3.setText("3");
+        num3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num3ActionPerformed(evt);
+            }
+        });
 
-        buttonRound16.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound16.setText("4");
+        num4.setBackground(new java.awt.Color(0, 0, 0));
+        num4.setText("4");
+        num4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num4ActionPerformed(evt);
+            }
+        });
 
-        buttonRound17.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound17.setText("5");
+        num5.setBackground(new java.awt.Color(0, 0, 0));
+        num5.setText("5");
+        num5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num5ActionPerformed(evt);
+            }
+        });
 
-        buttonRound18.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound18.setText("6");
+        num6.setBackground(new java.awt.Color(0, 0, 0));
+        num6.setText("6");
+        num6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num6ActionPerformed(evt);
+            }
+        });
 
-        buttonRound19.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound19.setText("7");
+        num7.setBackground(new java.awt.Color(0, 0, 0));
+        num7.setText("7");
+        num7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num7ActionPerformed(evt);
+            }
+        });
 
-        buttonRound20.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound20.setText("8");
+        num8.setBackground(new java.awt.Color(0, 0, 0));
+        num8.setText("8");
+        num8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num8ActionPerformed(evt);
+            }
+        });
 
-        buttonRound21.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound21.setText("9");
+        num9.setBackground(new java.awt.Color(0, 0, 0));
+        num9.setText("9");
+        num9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num9ActionPerformed(evt);
+            }
+        });
 
-        buttonRound22.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound22.setText("0");
+        num0.setBackground(new java.awt.Color(0, 0, 0));
+        num0.setText("0");
+        num0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num0ActionPerformed(evt);
+            }
+        });
+
+        clear.setBackground(new java.awt.Color(0, 0, 0));
+        clear.setText("CL");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
 
         del.setBackground(new java.awt.Color(0, 0, 0));
-        del.setText("DEL");
+        del.setText("<-");
         del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delActionPerformed(evt);
@@ -144,38 +208,41 @@ public class tela_gui extends javax.swing.JFrame {
                 .addGap(87, 87, 87)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(buttonRound10, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(buttonRound11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(buttonRound15, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(buttonRound16, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(buttonRound17, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(buttonRound18, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(num6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(buttonRound19, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                             .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(buttonRound22, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(plus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(buttonRound20, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(num8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonRound21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(num9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonRound4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(less, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -185,32 +252,34 @@ public class tela_gui extends javax.swing.JFrame {
                 .addComponent(resultado1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonRound10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonRound16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(num4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonRound19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(plus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(less, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(buttonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -255,8 +324,12 @@ public class tela_gui extends javax.swing.JFrame {
            resultado1.setText(String.valueOf(tempNumSoma + tempNum)); 
            JOptionPane.showMessageDialog(null, tempNumSoma);
            funcao = 0;
+           resultado1.requestFocus();
         } else if (funcao == 2){
-
+           tempNum = Double.parseDouble(resultado1.getText());
+           resultado1.setText(String.valueOf(tempNumSoma - tempNum));
+           funcao = 0;
+           resultado1.requestFocus();
         }
         
     }//GEN-LAST:event_equalActionPerformed
@@ -268,15 +341,91 @@ public class tela_gui extends javax.swing.JFrame {
         resultado1.requestFocus();
     }//GEN-LAST:event_plusActionPerformed
 
-    private void delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delActionPerformed
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         resultado1.setText("");
         funcao = 0;
         tempNumSoma = 0;
-    }//GEN-LAST:event_delActionPerformed
+        resultado1.requestFocus();
+    }//GEN-LAST:event_clearActionPerformed
 
     private void resultado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultado1ActionPerformed
         
     }//GEN-LAST:event_resultado1ActionPerformed
+
+    private void lessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessActionPerformed
+        funcao = 2;
+        tempNumSoma = Double.parseDouble(resultado1.getText());
+        resultado1.setText("");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_lessActionPerformed
+
+    private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
+        resultado1.setText(resultado1.getText()+"1");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num1ActionPerformed
+
+    private void num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num2ActionPerformed
+       resultado1.setText(resultado1.getText()+"2");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num2ActionPerformed
+
+    private void num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num3ActionPerformed
+        resultado1.setText(resultado1.getText()+"3");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num3ActionPerformed
+
+    private void num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num4ActionPerformed
+        resultado1.setText(resultado1.getText()+"4");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num4ActionPerformed
+
+    private void num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num5ActionPerformed
+        resultado1.setText(resultado1.getText()+"5");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num5ActionPerformed
+
+    private void num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num6ActionPerformed
+        resultado1.setText(resultado1.getText()+"6");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num6ActionPerformed
+
+    private void num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num7ActionPerformed
+        resultado1.setText(resultado1.getText()+"7");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num7ActionPerformed
+
+    private void num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num8ActionPerformed
+        resultado1.setText(resultado1.getText()+"8");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num8ActionPerformed
+
+    private void num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num9ActionPerformed
+       resultado1.setText(resultado1.getText()+"9");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num9ActionPerformed
+
+    private void num0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num0ActionPerformed
+        resultado1.setText(resultado1.getText()+"0");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_num0ActionPerformed
+
+    private void delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delActionPerformed
+        String resultado = resultado1.getText();
+        String show = "";
+        char[] arr = new char[resultado.length()];
+        System.out.println(resultado.length());
+        for(int x = 0; x < resultado.length() - 1; x++) {
+            arr[x] = resultado.charAt(x);
+            JOptionPane.showMessageDialog(null, arr[x]);
+            show += String.valueOf(arr[x]);
+            System.out.println(arr[x]);
+        }
+        //for (char x : arr) {
+        //    System.out.println(x);
+        //}
+        resultado1.setText(show);
+        resultado1.requestFocus();
+    }//GEN-LAST:event_delActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,21 +465,22 @@ public class tela_gui extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound buttonRound1;
-    private org.edisoncor.gui.button.ButtonRound buttonRound10;
-    private org.edisoncor.gui.button.ButtonRound buttonRound11;
-    private org.edisoncor.gui.button.ButtonRound buttonRound15;
-    private org.edisoncor.gui.button.ButtonRound buttonRound16;
-    private org.edisoncor.gui.button.ButtonRound buttonRound17;
-    private org.edisoncor.gui.button.ButtonRound buttonRound18;
-    private org.edisoncor.gui.button.ButtonRound buttonRound19;
-    private org.edisoncor.gui.button.ButtonRound buttonRound20;
-    private org.edisoncor.gui.button.ButtonRound buttonRound21;
-    private org.edisoncor.gui.button.ButtonRound buttonRound22;
     private org.edisoncor.gui.button.ButtonRound buttonRound3;
-    private org.edisoncor.gui.button.ButtonRound buttonRound4;
+    private org.edisoncor.gui.button.ButtonRound clear;
     private org.edisoncor.gui.button.ButtonRound del;
     private org.edisoncor.gui.button.ButtonRound equal;
     private javax.swing.JPanel jPanel1;
+    private org.edisoncor.gui.button.ButtonRound less;
+    private org.edisoncor.gui.button.ButtonRound num0;
+    private org.edisoncor.gui.button.ButtonRound num1;
+    private org.edisoncor.gui.button.ButtonRound num2;
+    private org.edisoncor.gui.button.ButtonRound num3;
+    private org.edisoncor.gui.button.ButtonRound num4;
+    private org.edisoncor.gui.button.ButtonRound num5;
+    private org.edisoncor.gui.button.ButtonRound num6;
+    private org.edisoncor.gui.button.ButtonRound num7;
+    private org.edisoncor.gui.button.ButtonRound num8;
+    private org.edisoncor.gui.button.ButtonRound num9;
     private org.edisoncor.gui.button.ButtonRound plus;
     private org.edisoncor.gui.textField.TextFieldRectBackground resultado1;
     // End of variables declaration//GEN-END:variables

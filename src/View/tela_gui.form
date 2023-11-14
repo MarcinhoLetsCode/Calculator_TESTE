@@ -57,23 +57,23 @@
                   <EmptySpace min="87" pref="87" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="buttonRound10" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="num1" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="buttonRound11" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="num2" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="buttonRound15" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="num3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="buttonRound16" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="num4" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="buttonRound17" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="num5" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="buttonRound18" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="num6" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="buttonRound19" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="num7" min="-2" pref="36" max="-2" attributes="0"/>
                                   <Component id="equal" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="buttonRound1" min="-2" pref="36" max="-2" attributes="0"/>
@@ -81,21 +81,25 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="buttonRound22" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="num0" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="plus" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="buttonRound20" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="num8" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="buttonRound21" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="num9" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="buttonRound3" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="buttonRound4" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="less" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="del" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="clear" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="del" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -110,38 +114,41 @@
                   <Component id="resultado1" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonRound10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonRound16" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound17" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonRound19" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound20" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound21" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="plus" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="buttonRound1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound22" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="num0" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="buttonRound4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="less" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonRound3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="equal" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="9" max="32767" attributes="0"/>
-                  <Component id="del" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="clear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="del" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -190,13 +197,16 @@
             <Property name="text" type="java.lang.String" value="/"/>
           </Properties>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound4">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="less">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lessActionPerformed"/>
+          </Events>
         </Component>
         <Component class="org.edisoncor.gui.button.ButtonRound" name="equal">
           <Properties>
@@ -209,92 +219,133 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="equalActionPerformed"/>
           </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound10">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num1ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound11">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num2ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound15">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num3ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound16">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="4"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num4ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound17">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num5ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound18">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num6">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="6"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num6ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound19">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num7">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="7"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num7ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound20">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num8">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="8"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num8ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound21">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="9"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num9ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound22">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="num0">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num0ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="clear">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CL"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearActionPerformed"/>
+          </Events>
         </Component>
         <Component class="org.edisoncor.gui.button.ButtonRound" name="del">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DEL"/>
+            <Property name="text" type="java.lang.String" value="&lt;-"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delActionPerformed"/>
