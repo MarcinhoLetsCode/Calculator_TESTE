@@ -333,7 +333,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="num6" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="buttonRound3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="divid" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -355,7 +355,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="comma" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="buttonRound1" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="multiply" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="clear" min="-2" pref="36" max="-2" attributes="0"/>
@@ -386,7 +386,7 @@
                       <Component id="num4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="num5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="num6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonRound3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="divid" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -410,7 +410,7 @@
                               <Component id="equal" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="buttonRound1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="multiply" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="402" max="-2" attributes="0"/>
               </Group>
@@ -418,13 +418,16 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound1">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="multiply">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="X"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiplyActionPerformed"/>
+          </Events>
         </Component>
         <Component class="org.edisoncor.gui.textField.TextFieldRectBackground" name="resultado1">
           <Properties>
@@ -453,13 +456,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plusActionPerformed"/>
           </Events>
         </Component>
-        <Component class="org.edisoncor.gui.button.ButtonRound" name="buttonRound3">
+        <Component class="org.edisoncor.gui.button.ButtonRound" name="divid">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="/"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dividActionPerformed"/>
+          </Events>
         </Component>
         <Component class="org.edisoncor.gui.button.ButtonRound" name="less">
           <Properties>

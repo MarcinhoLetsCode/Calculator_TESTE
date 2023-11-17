@@ -43,10 +43,10 @@ public class tela_gui extends javax.swing.JFrame {
         calcularImc = new org.edisoncor.gui.button.ButtonAction();
         resultadoImc = new javax.swing.JTextArea();
         panelPadrao = new javax.swing.JPanel();
-        buttonRound1 = new org.edisoncor.gui.button.ButtonRound();
+        multiply = new org.edisoncor.gui.button.ButtonRound();
         resultado1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
         plus = new org.edisoncor.gui.button.ButtonRound();
-        buttonRound3 = new org.edisoncor.gui.button.ButtonRound();
+        divid = new org.edisoncor.gui.button.ButtonRound();
         less = new org.edisoncor.gui.button.ButtonRound();
         equal = new org.edisoncor.gui.button.ButtonRound();
         num1 = new org.edisoncor.gui.button.ButtonRound();
@@ -185,8 +185,13 @@ public class tela_gui extends javax.swing.JFrame {
         panelPadrao.setBackground(new java.awt.Color(255, 255, 255));
         panelPadrao.setPreferredSize(new java.awt.Dimension(330, 400));
 
-        buttonRound1.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound1.setText("X");
+        multiply.setBackground(new java.awt.Color(0, 0, 0));
+        multiply.setText("X");
+        multiply.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multiplyActionPerformed(evt);
+            }
+        });
 
         resultado1.setBackground(new java.awt.Color(0, 0, 0));
         resultado1.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,8 +212,13 @@ public class tela_gui extends javax.swing.JFrame {
             }
         });
 
-        buttonRound3.setBackground(new java.awt.Color(0, 0, 0));
-        buttonRound3.setText("/");
+        divid.setBackground(new java.awt.Color(0, 0, 0));
+        divid.setText("/");
+        divid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dividActionPerformed(evt);
+            }
+        });
 
         less.setBackground(new java.awt.Color(0, 0, 0));
         less.setText("-");
@@ -364,7 +374,7 @@ public class tela_gui extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(num6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(divid, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelPadraoLayout.createSequentialGroup()
                         .addGroup(panelPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -383,7 +393,7 @@ public class tela_gui extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(comma, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelPadraoLayout.createSequentialGroup()
                                 .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -406,7 +416,7 @@ public class tela_gui extends javax.swing.JFrame {
                     .addComponent(num4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(num5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(num6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(divid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,7 +435,7 @@ public class tela_gui extends javax.swing.JFrame {
                             .addComponent(del, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(402, 402, 402))
         );
 
@@ -536,13 +546,15 @@ public class tela_gui extends javax.swing.JFrame {
     private void delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delActionPerformed
         String resultado = resultado1.getText();
         String show = "";
-        char[] arr = new char[resultado.length()];
+        //char[] arr = new char[resultado.length()];
         System.out.println(resultado.length());
         for(int x = 0; x < resultado.length() - 1; x++) {
-            arr[x] = resultado.charAt(x);
+            //arr[x] = resultado.charAt(x);
             //JOptionPane.showMessageDialog(null, arr[x]);
-            show += String.valueOf(arr[x]);
-            System.out.println(arr[x]);
+            //show += String.valueOf(arr[x]);
+            show += resultado.charAt(x);
+            //System.out.println(arr[x]);
+            System.out.println(resultado.charAt(x));
         }
         //for (char x : arr) {
             //    System.out.println(x);
@@ -569,6 +581,19 @@ public class tela_gui extends javax.swing.JFrame {
             resultado1.setText(String.valueOf(tempNumSoma - tempNum));
             funcao = 0;
             resultado1.requestFocus();
+        } else if (funcao == 3){
+            tempNum = Double.parseDouble(resultado1.getText());
+            resultado1.setText(String.valueOf(tempNumSoma / tempNum));
+            funcao = 0;
+            resultado1.requestFocus();
+        } else if (funcao == 4){
+            tempNum = Double.parseDouble(resultado1.getText());
+            resultado1.setText(String.valueOf(tempNumSoma * tempNum));
+            funcao = 0;
+            resultado1.requestFocus();
+        } else {
+            JOptionPane.showMessageDialog(null, "Algo Deu Errado!");
+            resultado1.setText("");
         }
 
     }//GEN-LAST:event_equalActionPerformed
@@ -683,6 +708,20 @@ public class tela_gui extends javax.swing.JFrame {
         
     }//GEN-LAST:event_calcularImcActionPerformed
 
+    private void dividActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dividActionPerformed
+        funcao = 3;
+        tempNumSoma = Double.parseDouble(resultado1.getText());
+        resultado1.setText("");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_dividActionPerformed
+
+    private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
+        funcao = 4;
+        tempNumSoma = Double.parseDouble(resultado1.getText());
+        resultado1.setText("");
+        resultado1.requestFocus();
+    }//GEN-LAST:event_multiplyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -722,13 +761,12 @@ public class tela_gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.label.LabelRect altura;
     private org.edisoncor.gui.textField.TextFieldRectIcon alturaText;
-    private org.edisoncor.gui.button.ButtonRound buttonRound1;
-    private org.edisoncor.gui.button.ButtonRound buttonRound3;
     private org.edisoncor.gui.button.ButtonAction calcularImc;
     private org.edisoncor.gui.button.ButtonRound clear;
     private javax.swing.JMenuItem close;
     private org.edisoncor.gui.button.ButtonRound comma;
     private org.edisoncor.gui.button.ButtonRound del;
+    private org.edisoncor.gui.button.ButtonRound divid;
     private org.edisoncor.gui.button.ButtonRound dot;
     private org.edisoncor.gui.button.ButtonRound equal;
     private javax.swing.JMenu jMenu1;
@@ -737,6 +775,7 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonRound less;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuImc;
+    private org.edisoncor.gui.button.ButtonRound multiply;
     private org.edisoncor.gui.button.ButtonRound num0;
     private org.edisoncor.gui.button.ButtonRound num1;
     private org.edisoncor.gui.button.ButtonRound num2;
