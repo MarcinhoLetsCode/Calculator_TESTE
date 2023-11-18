@@ -67,6 +67,7 @@ public class tela_gui extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         padrao = new javax.swing.JMenuItem();
         menuImc = new javax.swing.JMenuItem();
+        about = new javax.swing.JMenuItem();
         close = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,7 +97,7 @@ public class tela_gui extends javax.swing.JFrame {
             .addGroup(painelHomeLayout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(labelCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
         panelImc.setVisible(false);
@@ -178,7 +179,7 @@ public class tela_gui extends javax.swing.JFrame {
                 .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(resultadoImc, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         panelPadrao.setVisible(false);
@@ -461,6 +462,14 @@ public class tela_gui extends javax.swing.JFrame {
         });
         jMenu1.add(menuImc);
 
+        about.setText("Sobre");
+        about.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutActionPerformed(evt);
+            }
+        });
+        jMenu1.add(about);
+
         close.setBackground(new java.awt.Color(0, 0, 0));
         close.setForeground(new java.awt.Color(255, 255, 255));
         close.setText("Close");
@@ -491,7 +500,7 @@ public class tela_gui extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelPadrao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelImc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelImc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(painelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -526,6 +535,7 @@ public class tela_gui extends javax.swing.JFrame {
 
     private void padraoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_padraoActionPerformed
         panelPadrao.setVisible(true);
+        panelImc.setVisible(false);
     }//GEN-LAST:event_padraoActionPerformed
 
     private void menuImcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuImcActionPerformed
@@ -722,6 +732,10 @@ public class tela_gui extends javax.swing.JFrame {
         resultado1.requestFocus();
     }//GEN-LAST:event_multiplyActionPerformed
 
+    private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
+        JOptionPane.showMessageDialog(null, "Developed By Marcio Darlan :p");
+    }//GEN-LAST:event_aboutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -759,6 +773,7 @@ public class tela_gui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem about;
     private org.edisoncor.gui.label.LabelRect altura;
     private org.edisoncor.gui.textField.TextFieldRectIcon alturaText;
     private org.edisoncor.gui.button.ButtonAction calcularImc;
