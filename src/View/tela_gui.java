@@ -204,6 +204,11 @@ public class tela_gui extends javax.swing.JFrame {
                 resultado1ActionPerformed(evt);
             }
         });
+        resultado1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                resultado1KeyTyped(evt);
+            }
+        });
 
         plus.setBackground(new java.awt.Color(0, 0, 0));
         plus.setText("+");
@@ -536,6 +541,7 @@ public class tela_gui extends javax.swing.JFrame {
     private void padraoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_padraoActionPerformed
         panelPadrao.setVisible(true);
         panelImc.setVisible(false);
+        resultado1.requestFocus();
     }//GEN-LAST:event_padraoActionPerformed
 
     private void menuImcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuImcActionPerformed
@@ -735,6 +741,24 @@ public class tela_gui extends javax.swing.JFrame {
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         JOptionPane.showMessageDialog(null, "Developed By Marcio Darlan :p");
     }//GEN-LAST:event_aboutActionPerformed
+
+    private void resultado1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyTyped
+        String number = "0123456789.";
+        char typed = evt.getKeyChar();
+        //if (number.indexOf(typed) < 0) {
+         //   evt.consume();           
+        //}
+        if (String.valueOf(typed).equals(".")){
+            if (resultado1.getText().contains(".")){
+                evt.consume();
+            }
+        } else if (!number.contains(String.valueOf(typed))) {
+            evt.consume();
+        }           
+        
+        
+        System.out.println(evt.getKeyChar());
+    }//GEN-LAST:event_resultado1KeyTyped
 
     /**
      * @param args the command line arguments
