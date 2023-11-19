@@ -550,7 +550,11 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_menuImcActionPerformed
 
     private void dotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotActionPerformed
-        resultado1.setText(resultado1.getText()+".");
+        if (resultado1.getText().contains(".")){
+            resultado1.requestFocus();
+        } else {
+            resultado1.setText(resultado1.getText()+".");
+        }
         resultado1.requestFocus();
     }//GEN-LAST:event_dotActionPerformed
 
@@ -675,7 +679,12 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_num4ActionPerformed
 
     private void commaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commaActionPerformed
-        resultado1.setText(resultado1.getText()+",");
+        if (resultado1.getText().contains(",")){
+            resultado1.requestFocus();
+        } else {
+            resultado1.setText(resultado1.getText()+",");
+            resultado1.requestFocus();
+        }
         resultado1.requestFocus();
     }//GEN-LAST:event_commaActionPerformed
 
