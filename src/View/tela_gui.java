@@ -117,6 +117,9 @@ public class tela_gui extends javax.swing.JFrame {
         peso.setText("Peso");
         peso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
+        alturaText.setForeground(new java.awt.Color(0, 0, 0));
+        alturaText.setCaretColor(new java.awt.Color(255, 255, 255));
+
         pesoText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesoTextActionPerformed(evt);
@@ -205,6 +208,9 @@ public class tela_gui extends javax.swing.JFrame {
             }
         });
         resultado1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                resultado1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 resultado1KeyTyped(evt);
             }
@@ -679,10 +685,10 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_num4ActionPerformed
 
     private void commaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commaActionPerformed
-        if (resultado1.getText().contains(",")){
+        if (resultado1.getText().contains(".")){
             resultado1.requestFocus();
         } else {
-            resultado1.setText(resultado1.getText()+",");
+            resultado1.setText(resultado1.getText()+".");
             resultado1.requestFocus();
         }
         resultado1.requestFocus();
@@ -752,22 +758,24 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutActionPerformed
 
     private void resultado1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyTyped
-        String number = "0123456789.";
+        String number = "0123456789.,";
         char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
-        if (String.valueOf(typed).equals(".")){
-            if (resultado1.getText().contains(".")){
-                evt.consume();
-            }
-        } else if (!number.contains(String.valueOf(typed))) {
+        if (!number.contains(String.valueOf(typed))) {
             evt.consume();
-        }           
-        
-        
-        System.out.println(evt.getKeyChar());
+        } else if (resultado1.getText().contains(".")){
+            evt.consume();
+        }
+        //System.out.println(evt.getKeyChar());
     }//GEN-LAST:event_resultado1KeyTyped
+
+    private void resultado1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyReleased
+        if (String.valueOf(evt.getKeyChar()).equals(",")) {
+            resultado1.setText(resultado1.getText().replace(",",  "."));
+        }
+    }//GEN-LAST:event_resultado1KeyReleased
 
     /**
      * @param args the command line arguments
