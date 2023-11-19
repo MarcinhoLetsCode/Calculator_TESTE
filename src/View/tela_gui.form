@@ -110,7 +110,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="panelPadrao" alignment="1" min="-2" max="-2" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="panelImc" alignment="1" pref="402" max="32767" attributes="0"/>
+              <Component id="panelImc" alignment="1" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Component id="painelHome" alignment="1" max="32767" attributes="0"/>
@@ -141,7 +141,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                   <Component id="labelCustom1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="243" max="32767" attributes="0"/>
+                  <EmptySpace pref="241" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -202,8 +202,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cm1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="kg1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cm" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="kg" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -225,13 +225,13 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="altura" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="alturaText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cm" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="peso" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pesoText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="kg1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="kg" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="calcularImc" min="-2" max="-2" attributes="0"/>
@@ -282,10 +282,11 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alturaTextActionPerformed"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="alturaTextKeyReleased"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="alturaTextKeyTyped"/>
           </Events>
@@ -320,7 +321,7 @@
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="resultadoImc.setVisible(false);"/>
           </AuxValues>
         </Component>
-        <Component class="org.edisoncor.gui.label.LabelRect" name="cm1">
+        <Component class="org.edisoncor.gui.label.LabelRect" name="cm">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -331,7 +332,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="org.edisoncor.gui.label.LabelRect" name="kg1">
+        <Component class="org.edisoncor.gui.label.LabelRect" name="kg">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>

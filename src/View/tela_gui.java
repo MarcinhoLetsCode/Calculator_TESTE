@@ -5,6 +5,7 @@
  */
 package View;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,8 +43,8 @@ public class tela_gui extends javax.swing.JFrame {
         pesoText = new org.edisoncor.gui.textField.TextFieldRectIcon();
         calcularImc = new org.edisoncor.gui.button.ButtonAction();
         resultadoImc = new javax.swing.JTextArea();
-        cm1 = new org.edisoncor.gui.label.LabelRect();
-        kg1 = new org.edisoncor.gui.label.LabelRect();
+        cm = new org.edisoncor.gui.label.LabelRect();
+        kg = new org.edisoncor.gui.label.LabelRect();
         panelPadrao = new javax.swing.JPanel();
         multiply = new org.edisoncor.gui.button.ButtonRound();
         resultado1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
@@ -120,7 +121,12 @@ public class tela_gui extends javax.swing.JFrame {
         peso.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
         alturaText.setForeground(new java.awt.Color(0, 0, 0));
-        alturaText.setCaretColor(new java.awt.Color(255, 255, 255));
+        alturaText.setCaretColor(new java.awt.Color(0, 0, 0));
+        alturaText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alturaTextActionPerformed(evt);
+            }
+        });
         alturaText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 alturaTextKeyReleased(evt);
@@ -159,13 +165,13 @@ public class tela_gui extends javax.swing.JFrame {
         resultadoImc.setFocusable(false);
         resultadoImc.setMargin(new java.awt.Insets(20, 20, 0, 0));
 
-        cm1.setBackground(new java.awt.Color(0, 0, 0));
-        cm1.setText("cm");
-        cm1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cm.setBackground(new java.awt.Color(0, 0, 0));
+        cm.setText("cm");
+        cm.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        kg1.setBackground(new java.awt.Color(0, 0, 0));
-        kg1.setText("kg");
-        kg1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        kg.setBackground(new java.awt.Color(0, 0, 0));
+        kg.setText("kg");
+        kg.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout panelImcLayout = new javax.swing.GroupLayout(panelImc);
         panelImc.setLayout(panelImcLayout);
@@ -188,8 +194,8 @@ public class tela_gui extends javax.swing.JFrame {
                                 .addGap(13, 13, 13)))
                         .addGap(26, 26, 26)
                         .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cm1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kg1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImcLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -205,12 +211,12 @@ public class tela_gui extends javax.swing.JFrame {
                 .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(alturaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pesoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
@@ -586,6 +592,7 @@ public class tela_gui extends javax.swing.JFrame {
     private void menuImcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuImcActionPerformed
         panelPadrao.setVisible(false);
         panelImc.setVisible(true);
+        alturaText.requestFocus();
     }//GEN-LAST:event_menuImcActionPerformed
 
     private void dotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotActionPerformed
@@ -818,35 +825,38 @@ public class tela_gui extends javax.swing.JFrame {
         //}
         if (!number.contains(String.valueOf(typed))) {
             evt.consume();
-        } else if (resultado1.getText().contains(".")){
+        } else if (alturaText.getText().contains(".")){
             evt.consume();
         }
     }//GEN-LAST:event_alturaTextKeyTyped
 
     private void alturaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyReleased
         if (String.valueOf(evt.getKeyChar()).equals(",")) {
-            resultado1.setText(resultado1.getText().replace(",",  "."));
+            alturaText.setText(alturaText.getText().replace(",",  "."));
         }
     }//GEN-LAST:event_alturaTextKeyReleased
 
     private void pesoTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyReleased
         if (String.valueOf(evt.getKeyChar()).equals(",")) {
-            resultado1.setText(resultado1.getText().replace(",",  "."));
+            pesoText.setText(pesoText.getText().replace(",",  "."));
         }
     }//GEN-LAST:event_pesoTextKeyReleased
 
     private void pesoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyTyped
-        String number = "0123456789.,";
+        //verificar(pesoText.getText());
+        if (verificar(pesoText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
+            evt.consume();
+        }
         char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
-        if (!number.contains(String.valueOf(typed))) {
-            evt.consume();
-        } else if (resultado1.getText().contains(".")){
-            evt.consume();
-        }
+        
     }//GEN-LAST:event_pesoTextKeyTyped
+
+    private void alturaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alturaTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alturaTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -891,14 +901,14 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonAction calcularImc;
     private org.edisoncor.gui.button.ButtonRound clear;
     private javax.swing.JMenuItem close;
-    private org.edisoncor.gui.label.LabelRect cm1;
+    private org.edisoncor.gui.label.LabelRect cm;
     private org.edisoncor.gui.button.ButtonRound comma;
     private org.edisoncor.gui.button.ButtonRound del;
     private org.edisoncor.gui.button.ButtonRound divid;
     private org.edisoncor.gui.button.ButtonRound dot;
     private org.edisoncor.gui.button.ButtonRound equal;
     private javax.swing.JMenu jMenu1;
-    private org.edisoncor.gui.label.LabelRect kg1;
+    private org.edisoncor.gui.label.LabelRect kg;
     private org.edisoncor.gui.label.LabelCustom labelCustom1;
     private org.edisoncor.gui.label.LabelRect labelRect1;
     private org.edisoncor.gui.button.ButtonRound less;
@@ -925,4 +935,16 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.textField.TextFieldRectBackground resultado1;
     private javax.swing.JTextArea resultadoImc;
     // End of variables declaration//GEN-END:variables
+
+    private int verificar(String text, String valueOf) {
+        String number = "0123456789.,";
+        if (!number.contains(String.valueOf(valueOf))) {
+            System.out.print(valueOf);
+            return 0;
+        } else if (text.contains(".")){
+            return 0;
+        }
+        return 1;
+    }
+
 }
