@@ -42,6 +42,8 @@ public class tela_gui extends javax.swing.JFrame {
         pesoText = new org.edisoncor.gui.textField.TextFieldRectIcon();
         calcularImc = new org.edisoncor.gui.button.ButtonAction();
         resultadoImc = new javax.swing.JTextArea();
+        cm1 = new org.edisoncor.gui.label.LabelRect();
+        kg1 = new org.edisoncor.gui.label.LabelRect();
         panelPadrao = new javax.swing.JPanel();
         multiply = new org.edisoncor.gui.button.ButtonRound();
         resultado1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
@@ -119,10 +121,26 @@ public class tela_gui extends javax.swing.JFrame {
 
         alturaText.setForeground(new java.awt.Color(0, 0, 0));
         alturaText.setCaretColor(new java.awt.Color(255, 255, 255));
+        alturaText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                alturaTextKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                alturaTextKeyTyped(evt);
+            }
+        });
 
         pesoText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesoTextActionPerformed(evt);
+            }
+        });
+        pesoText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                pesoTextKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                pesoTextKeyTyped(evt);
             }
         });
 
@@ -141,48 +159,63 @@ public class tela_gui extends javax.swing.JFrame {
         resultadoImc.setFocusable(false);
         resultadoImc.setMargin(new java.awt.Insets(20, 20, 0, 0));
 
+        cm1.setBackground(new java.awt.Color(0, 0, 0));
+        cm1.setText("cm");
+        cm1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
+        kg1.setBackground(new java.awt.Color(0, 0, 0));
+        kg1.setText("kg");
+        kg1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
         javax.swing.GroupLayout panelImcLayout = new javax.swing.GroupLayout(panelImc);
         panelImc.setLayout(panelImcLayout);
         panelImcLayout.setHorizontalGroup(
             panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImcLayout.createSequentialGroup()
-                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(resultadoImc)
                     .addGroup(panelImcLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelImcLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(resultadoImc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelImcLayout.createSequentialGroup()
-                                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pesoText, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(alturaText, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pesoText, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                            .addComponent(alturaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImcLayout.createSequentialGroup()
+                                .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)))
+                        .addGap(26, 26, 26)
+                        .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cm1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kg1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImcLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133))
         );
         panelImcLayout.setVerticalGroup(
             panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImcLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alturaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alturaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelImcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pesoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pesoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(calcularImc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
                 .addComponent(resultadoImc, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         panelPadrao.setVisible(false);
@@ -777,6 +810,44 @@ public class tela_gui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_resultado1KeyReleased
 
+    private void alturaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyTyped
+        String number = "0123456789.,";
+        char typed = evt.getKeyChar();
+        //if (number.indexOf(typed) < 0) {
+         //   evt.consume();           
+        //}
+        if (!number.contains(String.valueOf(typed))) {
+            evt.consume();
+        } else if (resultado1.getText().contains(".")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_alturaTextKeyTyped
+
+    private void alturaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyReleased
+        if (String.valueOf(evt.getKeyChar()).equals(",")) {
+            resultado1.setText(resultado1.getText().replace(",",  "."));
+        }
+    }//GEN-LAST:event_alturaTextKeyReleased
+
+    private void pesoTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyReleased
+        if (String.valueOf(evt.getKeyChar()).equals(",")) {
+            resultado1.setText(resultado1.getText().replace(",",  "."));
+        }
+    }//GEN-LAST:event_pesoTextKeyReleased
+
+    private void pesoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyTyped
+        String number = "0123456789.,";
+        char typed = evt.getKeyChar();
+        //if (number.indexOf(typed) < 0) {
+         //   evt.consume();           
+        //}
+        if (!number.contains(String.valueOf(typed))) {
+            evt.consume();
+        } else if (resultado1.getText().contains(".")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_pesoTextKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -820,12 +891,14 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonAction calcularImc;
     private org.edisoncor.gui.button.ButtonRound clear;
     private javax.swing.JMenuItem close;
+    private org.edisoncor.gui.label.LabelRect cm1;
     private org.edisoncor.gui.button.ButtonRound comma;
     private org.edisoncor.gui.button.ButtonRound del;
     private org.edisoncor.gui.button.ButtonRound divid;
     private org.edisoncor.gui.button.ButtonRound dot;
     private org.edisoncor.gui.button.ButtonRound equal;
     private javax.swing.JMenu jMenu1;
+    private org.edisoncor.gui.label.LabelRect kg1;
     private org.edisoncor.gui.label.LabelCustom labelCustom1;
     private org.edisoncor.gui.label.LabelRect labelRect1;
     private org.edisoncor.gui.button.ButtonRound less;
