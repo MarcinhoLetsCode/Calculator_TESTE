@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class tela_gui extends javax.swing.JFrame {
 
     private int funcao = 1;
-    private double tempNumSoma = 0;
+    private double tempNum = 0;
 
     /**
      * Creates new form tela_gui2
@@ -100,7 +100,7 @@ public class tela_gui extends javax.swing.JFrame {
             .addGroup(painelHomeLayout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(labelCustom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
 
         panelImc.setVisible(false);
@@ -550,7 +550,7 @@ public class tela_gui extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelPadrao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelImc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
+                .addComponent(panelImc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(painelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -635,26 +635,31 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_num1ActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-        double tempNum = 0;
+        double convertido = 0;
+        
+        if (resultado1.getText().indexOf(".") == 0){
+            convertido = Double.parseDouble("0" + resultado1.getText());
+        } else {
+            convertido = Double.parseDouble(resultado1.getText());
+        }
+        
+        
         if (funcao == 1){
-            tempNum = Double.parseDouble(resultado1.getText());
-            resultado1.setText(String.valueOf(tempNumSoma + tempNum));
-            JOptionPane.showMessageDialog(null, tempNumSoma);
+            resultado1.setText(String.valueOf(this.tempNum + convertido));
+            JOptionPane.showMessageDialog(null, this.tempNum);
             funcao = 0;
             resultado1.requestFocus();
         } else if (funcao == 2){
-            tempNum = Double.parseDouble(resultado1.getText());
-            resultado1.setText(String.valueOf(tempNumSoma - tempNum));
+            resultado1.setText(String.valueOf(this.tempNum - convertido));
             funcao = 0;
             resultado1.requestFocus();
         } else if (funcao == 3){
-            tempNum = Double.parseDouble(resultado1.getText());
-            resultado1.setText(String.valueOf(tempNumSoma / tempNum));
+
+            resultado1.setText(String.valueOf(this.tempNum / convertido));
             funcao = 0;
             resultado1.requestFocus();
         } else if (funcao == 4){
-            tempNum = Double.parseDouble(resultado1.getText());
-            resultado1.setText(String.valueOf(tempNumSoma * tempNum));
+            resultado1.setText(String.valueOf(this.tempNum * convertido));
             funcao = 0;
             resultado1.requestFocus();
         } else {
@@ -666,14 +671,14 @@ public class tela_gui extends javax.swing.JFrame {
 
     private void lessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessActionPerformed
         funcao = 2;
-        tempNumSoma = Double.parseDouble(resultado1.getText());
+        tempNum = Double.parseDouble(resultado1.getText());
         resultado1.setText("");
         resultado1.requestFocus();
     }//GEN-LAST:event_lessActionPerformed
 
     private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
         funcao = 1;
-        tempNumSoma = Double.parseDouble(resultado1.getText());
+        tempNum = Double.parseDouble(resultado1.getText());
         resultado1.setText("");
         resultado1.requestFocus();
     }//GEN-LAST:event_plusActionPerformed
@@ -685,7 +690,7 @@ public class tela_gui extends javax.swing.JFrame {
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         resultado1.setText("");
         funcao = 0;
-        tempNumSoma = 0;
+        tempNum = 0;
         resultado1.requestFocus();
     }//GEN-LAST:event_clearActionPerformed
 
@@ -781,14 +786,14 @@ public class tela_gui extends javax.swing.JFrame {
 
     private void dividActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dividActionPerformed
         funcao = 3;
-        tempNumSoma = Double.parseDouble(resultado1.getText());
+        tempNum = Double.parseDouble(resultado1.getText());
         resultado1.setText("");
         resultado1.requestFocus();
     }//GEN-LAST:event_dividActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
         funcao = 4;
-        tempNumSoma = Double.parseDouble(resultado1.getText());
+        tempNum = Double.parseDouble(resultado1.getText());
         resultado1.setText("");
         resultado1.requestFocus();
     }//GEN-LAST:event_multiplyActionPerformed
