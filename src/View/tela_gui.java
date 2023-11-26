@@ -845,9 +845,10 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_alturaTextKeyTyped
 
     private void alturaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyReleased
-        if (String.valueOf(evt.getKeyChar()).equals(",")) {
-            alturaText.setText(alturaText.getText().replace(",",  "."));
-        }
+        changeVirgula(evt.getKeyChar());
+//        if (String.valueOf(evt.getKeyChar()).equals(",")) {
+//            alturaText.setText(alturaText.getText().replace(",",  "."));
+//        }
     }//GEN-LAST:event_alturaTextKeyReleased
 
     private void pesoTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyReleased
@@ -959,6 +960,12 @@ public class tela_gui extends javax.swing.JFrame {
             return 0;
         }
         return 1;
+    }
+
+    private void changeVirgula(char keyChar) {
+        if (String.valueOf(keyChar).equals(",")) {
+            alturaText.setText(alturaText.getText().replace(",",  "."));
+        }
     }
 
 }
