@@ -247,6 +247,9 @@ public class tela_gui extends javax.swing.JFrame {
             }
         });
         resultado1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                resultado1KeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 resultado1KeyReleased(evt);
             }
@@ -803,27 +806,27 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutActionPerformed
 
     private void resultado1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyTyped
-        //String number = "0123456789.,";
-        //char typed = evt.getKeyChar();
+//        String number = "0123456789.,";
+//        char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
-        //if (!number.contains(String.valueOf(typed))) {
-        //    evt.consume();
-        //} else if (resultado1.getText().contains(".")){
-        //    evt.consume();
-        //}
+//        if (!number.contains(String.valueOf(typed))) {
+//            evt.consume();
+//        } else if (resultado1.getText().contains(".")){
+//            evt.consume();
+//        }
         //System.out.println(evt.getKeyChar());
-        
         if (verificar(resultado1.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
     }//GEN-LAST:event_resultado1KeyTyped
 
     private void resultado1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyReleased
-        if (String.valueOf(evt.getKeyChar()).equals(",")) {
-            resultado1.setText(resultado1.getText().replace(",",  "."));
-        }
+        changeVirgula("resultado", evt.getKeyChar());
+//        if (String.valueOf(evt.getKeyChar()).equals(",")) {
+//            resultado1.setText(resultado1.getText().replace(",",  "."));
+//        }
     }//GEN-LAST:event_resultado1KeyReleased
 
     private void alturaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyTyped
@@ -837,24 +840,17 @@ public class tela_gui extends javax.swing.JFrame {
 //        } else if (alturaText.getText().contains(".")){
 //            evt.consume();
 //        }
-        
         if (verificar(alturaText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
-        
     }//GEN-LAST:event_alturaTextKeyTyped
 
     private void alturaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyReleased
-        changeVirgula(evt.getKeyChar());
-//        if (String.valueOf(evt.getKeyChar()).equals(",")) {
-//            alturaText.setText(alturaText.getText().replace(",",  "."));
-//        }
+        changeVirgula("altura", evt.getKeyChar());
     }//GEN-LAST:event_alturaTextKeyReleased
 
     private void pesoTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyReleased
-        if (String.valueOf(evt.getKeyChar()).equals(",")) {
-            pesoText.setText(pesoText.getText().replace(",",  "."));
-        }
+        changeVirgula("peso", evt.getKeyChar());
     }//GEN-LAST:event_pesoTextKeyReleased
 
     private void pesoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyTyped
@@ -862,7 +858,7 @@ public class tela_gui extends javax.swing.JFrame {
         if (verificar(pesoText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
-        //char typed = evt.getKeyChar();
+        char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
@@ -872,6 +868,10 @@ public class tela_gui extends javax.swing.JFrame {
     private void alturaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alturaTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_alturaTextActionPerformed
+
+    private void resultado1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resultado1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -956,15 +956,21 @@ public class tela_gui extends javax.swing.JFrame {
         if (!number.contains(String.valueOf(valueOf))) {
             System.out.print(valueOf);
             return 0;
-        } else if (text.contains(".")){
+        } else if (String.valueOf(valueOf).equals(".") && text.contains(".")){
             return 0;
         }
         return 1;
     }
 
-    private void changeVirgula(char keyChar) {
+    private void changeVirgula(String display, char keyChar) {
         if (String.valueOf(keyChar).equals(",")) {
-            alturaText.setText(alturaText.getText().replace(",",  "."));
+            if (display.equals("altura")) {
+                alturaText.setText(alturaText.getText().replace(",",  "."));
+            } else if (display.equals("peso")) {
+                pesoText.setText(pesoText.getText().replace(",",  "."));
+            } else if (display.equals("resultado")){
+                resultado1.setText(resultado1.getText().replace(",",  "."));
+            }
         }
     }
 
