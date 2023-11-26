@@ -803,17 +803,21 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutActionPerformed
 
     private void resultado1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyTyped
-        String number = "0123456789.,";
-        char typed = evt.getKeyChar();
+        //String number = "0123456789.,";
+        //char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
-        if (!number.contains(String.valueOf(typed))) {
-            evt.consume();
-        } else if (resultado1.getText().contains(".")){
+        //if (!number.contains(String.valueOf(typed))) {
+        //    evt.consume();
+        //} else if (resultado1.getText().contains(".")){
+        //    evt.consume();
+        //}
+        //System.out.println(evt.getKeyChar());
+        
+        if (verificar(resultado1.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
-        //System.out.println(evt.getKeyChar());
     }//GEN-LAST:event_resultado1KeyTyped
 
     private void resultado1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyReleased
@@ -823,16 +827,21 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_resultado1KeyReleased
 
     private void alturaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyTyped
-        String number = "0123456789.,";
-        char typed = evt.getKeyChar();
+//        String number = "0123456789.,";
+//        char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
-        if (!number.contains(String.valueOf(typed))) {
-            evt.consume();
-        } else if (alturaText.getText().contains(".")){
+//        if (!number.contains(String.valueOf(typed))) {
+//            evt.consume();
+//        } else if (alturaText.getText().contains(".")){
+//            evt.consume();
+//        }
+        
+        if (verificar(alturaText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
+        
     }//GEN-LAST:event_alturaTextKeyTyped
 
     private void alturaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyReleased
@@ -852,7 +861,7 @@ public class tela_gui extends javax.swing.JFrame {
         if (verificar(pesoText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
-        char typed = evt.getKeyChar();
+        //char typed = evt.getKeyChar();
         //if (number.indexOf(typed) < 0) {
          //   evt.consume();           
         //}
