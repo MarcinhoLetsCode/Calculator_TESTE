@@ -817,7 +817,7 @@ public class tela_gui extends javax.swing.JFrame {
 //            evt.consume();
 //        }
         //System.out.println(evt.getKeyChar());
-        if (verificar(resultado1.getText(), String.valueOf(evt.getKeyChar())) == 0) {
+        if (verificarDigitados(resultado1.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
     }//GEN-LAST:event_resultado1KeyTyped
@@ -840,7 +840,7 @@ public class tela_gui extends javax.swing.JFrame {
 //        } else if (alturaText.getText().contains(".")){
 //            evt.consume();
 //        }
-        if (verificar(alturaText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
+        if (verificarDigitados(alturaText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
     }//GEN-LAST:event_alturaTextKeyTyped
@@ -855,7 +855,7 @@ public class tela_gui extends javax.swing.JFrame {
 
     private void pesoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyTyped
         //verificar(pesoText.getText());
-        if (verificar(pesoText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
+        if (verificarDigitados(pesoText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
         char typed = evt.getKeyChar();
@@ -951,7 +951,7 @@ public class tela_gui extends javax.swing.JFrame {
     private javax.swing.JTextArea resultadoImc;
     // End of variables declaration//GEN-END:variables
 
-    private int verificar(String text, String valueOf) {
+    private int verificarDigitados(String text, String valueOf) {
         String number = "0123456789.,";
         if (!number.contains(String.valueOf(valueOf))) {
             System.out.print(valueOf);
