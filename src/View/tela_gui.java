@@ -951,6 +951,7 @@ public class tela_gui extends javax.swing.JFrame {
     private javax.swing.JTextArea resultadoImc;
     // End of variables declaration//GEN-END:variables
 
+    //OKAY
     private int verificarDigitados(String text, String valueOf) {
         String number = "0123456789.,";
         if (!number.contains(String.valueOf(valueOf))) {
@@ -962,6 +963,7 @@ public class tela_gui extends javax.swing.JFrame {
         return 1;
     }
 
+    //OKAY
     private void changeVirgula(String display, char keyChar) {
         if (String.valueOf(keyChar).equals(",")) {
             if (display.equals("altura")) {
