@@ -811,7 +811,9 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_resultado1KeyTyped
 
     private void resultado1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyReleased
-        changeVirgula("resultado", evt.getKeyChar());
+        if(String.valueOf(evt.getKeyChar()).equals(",")) {
+            changeVirgula("resultado");
+        }
     }//GEN-LAST:event_resultado1KeyReleased
 
     private void alturaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyTyped
@@ -821,11 +823,16 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_alturaTextKeyTyped
 
     private void alturaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyReleased
-        changeVirgula("altura", evt.getKeyChar());
+        if(String.valueOf(evt.getKeyChar()).equals(",")) {
+            changeVirgula("altura");
+        }
+        
     }//GEN-LAST:event_alturaTextKeyReleased
 
     private void pesoTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyReleased
-        changeVirgula("peso", evt.getKeyChar());
+        if(String.valueOf(evt.getKeyChar()).equals(",")) {
+            changeVirgula("peso");
+        }
     }//GEN-LAST:event_pesoTextKeyReleased
 
     private void pesoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyTyped
@@ -937,9 +944,19 @@ public class tela_gui extends javax.swing.JFrame {
     }
 
     //OKAY
-    private int changeVirgula(String display, char keyChar) {
-        if (display.equals("resultado")){
-            resultado1.setText(resultado1.getText().replace(",",  "."));
+    private int changeVirgula(String display) {
+        switch (display) {
+            case "resultado":
+                resultado1.setText(resultado1.getText().replace(",",  "."));
+                break;
+            case "altura":
+                alturaText.setText(alturaText.getText().replace(",",  "."));
+                break;
+            case "peso":
+                pesoText.setText(pesoText.getText().replace(",",  "."));
+                break;
+            default:
+                break;
         }
         return 0;
     }
