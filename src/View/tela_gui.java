@@ -805,17 +805,6 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutActionPerformed
 
     private void resultado1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyTyped
-//        String number = "0123456789.,";
-//        char typed = evt.getKeyChar();
-        //if (number.indexOf(typed) < 0) {
-         //   evt.consume();           
-        //}
-//        if (!number.contains(String.valueOf(typed))) {
-//            evt.consume();
-//        } else if (resultado1.getText().contains(".")){
-//            evt.consume();
-//        }
-        //System.out.println(evt.getKeyChar());
         if (verificarDigitados(resultado1.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
@@ -823,22 +812,9 @@ public class tela_gui extends javax.swing.JFrame {
 
     private void resultado1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_resultado1KeyReleased
         changeVirgula("resultado", evt.getKeyChar());
-//        if (String.valueOf(evt.getKeyChar()).equals(",")) {
-//            resultado1.setText(resultado1.getText().replace(",",  "."));
-//        }
     }//GEN-LAST:event_resultado1KeyReleased
 
     private void alturaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextKeyTyped
-//        String number = "0123456789.,";
-//        char typed = evt.getKeyChar();
-        //if (number.indexOf(typed) < 0) {
-         //   evt.consume();           
-        //}
-//        if (!number.contains(String.valueOf(typed))) {
-//            evt.consume();
-//        } else if (alturaText.getText().contains(".")){
-//            evt.consume();
-//        }
         if (verificarDigitados(alturaText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
@@ -853,14 +829,9 @@ public class tela_gui extends javax.swing.JFrame {
     }//GEN-LAST:event_pesoTextKeyReleased
 
     private void pesoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextKeyTyped
-        //verificar(pesoText.getText());
         if (verificarDigitados(pesoText.getText(), String.valueOf(evt.getKeyChar())) == 0) {
             evt.consume();
         }
-        char typed = evt.getKeyChar();
-        //if (number.indexOf(typed) < 0) {
-         //   evt.consume();           
-        //}
         
     }//GEN-LAST:event_pesoTextKeyTyped
 
