@@ -75,7 +75,6 @@ public class tela_gui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
-        setPreferredSize(new java.awt.Dimension(340, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(340, 400));
 
@@ -957,23 +956,21 @@ public class tela_gui extends javax.swing.JFrame {
         if (!number.contains(String.valueOf(valueOf))) {
             System.out.print(valueOf);
             return 0;
-        } else if (String.valueOf(valueOf).equals(".") && text.contains(".")){
+        } else if (String.valueOf(valueOf).equals(",") && text.contains(".")) {
+            return 0;
+        }
+        else if (String.valueOf(valueOf).equals(".") && text.contains(".")){
             return 0;
         }
         return 1;
     }
 
     //OKAY
-    private void changeVirgula(String display, char keyChar) {
-        if (String.valueOf(keyChar).equals(",")) {
-            if (display.equals("altura")) {
-                alturaText.setText(alturaText.getText().replace(",",  "."));
-            } else if (display.equals("peso")) {
-                pesoText.setText(pesoText.getText().replace(",",  "."));
-            } else if (display.equals("resultado")){
-                resultado1.setText(resultado1.getText().replace(",",  "."));
-            }
+    private int changeVirgula(String display, char keyChar) {
+        if (display.equals("resultado")){
+            resultado1.setText(resultado1.getText().replace(",",  "."));
         }
+        return 0;
     }
-
-}
+    
+}    
