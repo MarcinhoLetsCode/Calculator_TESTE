@@ -66,6 +66,7 @@ public class tela_gui extends javax.swing.JFrame {
         del = new org.edisoncor.gui.button.ButtonRound();
         dot = new org.edisoncor.gui.button.ButtonRound();
         comma = new org.edisoncor.gui.button.ButtonRound();
+        quad = new org.edisoncor.gui.button.ButtonRound();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         padrao = new javax.swing.JMenuItem();
@@ -401,6 +402,14 @@ public class tela_gui extends javax.swing.JFrame {
             }
         });
 
+        quad.setBackground(new java.awt.Color(0, 0, 0));
+        quad.setText("√");
+        quad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelPadraoLayout = new javax.swing.GroupLayout(panelPadrao);
         panelPadrao.setLayout(panelPadraoLayout);
         panelPadraoLayout.setHorizontalGroup(
@@ -451,6 +460,8 @@ public class tela_gui extends javax.swing.JFrame {
                                 .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(quad, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelPadraoLayout.setVerticalGroup(
@@ -463,7 +474,8 @@ public class tela_gui extends javax.swing.JFrame {
                     .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(plus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(plus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(num4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -850,6 +862,10 @@ public class tela_gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_resultado1KeyPressed
 
+    private void quadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quadActionPerformed
+        
+    }//GEN-LAST:event_quadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -924,6 +940,7 @@ public class tela_gui extends javax.swing.JFrame {
     private org.edisoncor.gui.label.LabelRect peso;
     private org.edisoncor.gui.textField.TextFieldRectIcon pesoText;
     private org.edisoncor.gui.button.ButtonRound plus;
+    private org.edisoncor.gui.button.ButtonRound quad;
     private org.edisoncor.gui.textField.TextFieldRectBackground resultado1;
     private javax.swing.JTextArea resultadoImc;
     // End of variables declaration//GEN-END:variables
